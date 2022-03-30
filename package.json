@@ -1,0 +1,33 @@
+{
+  "name": "cypress-perf",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "cy:open": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress open",
+    "cy:run": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --browser chrome --headless",
+    "cy:run-chrome-log=1": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --browser chrome --headless",
+    "cy:run-chrome-log=0": "set CYPRESS_NO_COMMAND_LOG=0 && npx cypress run --browser chrome --headless",
+    "cy:run-electron-log=1": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --headless",
+    "perftest-cy-run": "npm run cy:run-electron-log=0 && npm run cy:run-electron-log=1",
+    "perftest-cy-run10": "npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run",
+    "perftest-cy-run50": "npm run perftest-cy-run10 && npm run perftest-cy-run10 && npm run perftest-cy-run10 && npm run perftest-cy-run10 && npm run perftest-cy-run10",
+    "cy:run-electron-log=0": "set CYPRESS_NO_COMMAND_LOG=0 && npx cypress run --headless",
+    "cy:run-electron-headed-log=1": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --headed",
+    "cy:run-electron-headed-log=0": "set CYPRESS_NO_COMMAND_LOG=0 && npx cypress run --headed",
+    "perftest": "node run-tests.js",
+    "perftest10": "node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js && node run-tests.js",
+    "perftest50": "npm run perftest10 && npm run perftest10 && npm run perftest10 && npm run perftest10 && npm run perftest10",
+    "perftest100": "npm run perftest50 && npm run perftest50"
+  },
+  "author": "mirobo",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "9.5.1"
+  },
+  "dependencies": {
+    "bluebird": "3.5.5",
+    "console.table": "0.10.0",
+    "glob": "^7.2.0",
+    "globby": "13.1.1"
+  }
+}
