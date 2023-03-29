@@ -9,9 +9,11 @@ const runOneSpec = (spec, config) => {
     .run({
       config: {
         video: false,
-        ...config,
+        e2e: {
+          specPattern: spec,
+        },
       },
-      spec: spec,
+      ...config,
     })
     .then((result) => {
       if (result.failures) {
@@ -35,11 +37,11 @@ glob('**/*in*spec.js', (err, specs) => {
   console.table('Running last modified spec first', specs);
 
   var configs = [
-    {
-      env: {
-        NO_COMMAND_LOG: 1,
-      },
-    },
+    // {
+    //   env: {
+    //     NO_COMMAND_LOG: 1,
+    //   },
+    // },
     {
       env: {
         NO_COMMAND_LOG: 0,

@@ -1,6 +1,8 @@
 .npmrc
 package-lock.json
-
+**/atest/
+**/screenshots
+**/videos
 # Logs
 logs
 *.log

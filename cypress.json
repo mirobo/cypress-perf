@@ -1,5 +1,0 @@
-{
-  "baseUrl": null,
-  "video": false,
-  "testFiles": ["perftest/**/*.js"]
-}

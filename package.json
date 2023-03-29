@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "cy:open1": "cross-env ELECTRON_ENABLE_LOGGING=true && npx cypress open --e2e --browser electron",
     "cy:open": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress open",
-    "cy:run": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --browser chrome --headless",
-    "cy:run-chrome-log=1": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --browser chrome --headless",
-    "cy:run-chrome-log=0": "set CYPRESS_NO_COMMAND_LOG=0 && npx cypress run --browser chrome --headless",
+    "cy:run": "npx cypress run",
     "cy:run-electron-log=1": "set CYPRESS_NO_COMMAND_LOG=1 && npx cypress run --headless",
     "perftest-cy-run": "npm run cy:run-electron-log=0 && npm run cy:run-electron-log=1",
     "perftest-cy-run10": "npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run && npm run perftest-cy-run",
@@ -22,7 +21,9 @@
   "author": "mirobo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "9.5.1"
+    "cypress": "12.8.1",
+    "cross-env": "^7.0.3",
+    "@cypress/fiddle": "1.19.3"
   },
   "dependencies": {
     "bluebird": "3.5.5",
